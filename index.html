@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS 1130 Web Page Project</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>CS 1130 Web Page Project</h1>
+    <p class="subtitle">Student Assignments &middot; Your Name Here</p>
+    <nav class="nav" aria-label="Assignments">
+      <a href="#conversion">1. Conversion</a>
+      <a href="#tax">2. Income Tax</a>
+      <a href="#looping">3. Looping</a>
+      <a href="#payroll">4. Payroll</a>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- ASSIGNMENT 1: CONVERSION -->
+    <section id="conversion" class="panel">
+      <h2>Assignment #1 &ndash; Conversion</h2>
+      <p class="hint">Type a value and press Convert.</p>
+
+      <div class="grid grid-2">
+        <form class="card" data-conv="c2f">
+          <h3>Celsius to Fahrenheit</h3>
+          <label>Celsius (&deg;C)
+            <input type="number" step="any" placeholder="e.g. 100" required>
+          </label>
+          <button type="submit">Convert</button>
+          <p class="result" aria-live="polite"></p>
+        </form>
+
+        <form class="card" data-conv="f2c">
+          <h3>Fahrenheit to Celsius</h3>
+          <label>Fahrenheit (&deg;F)
+            <input type="number" step="any" placeholder="e.g. 212" required>
+          </label>
+          <button type="submit">Convert</button>
+          <p class="result" aria-live="polite"></p>
+        </form>
+
+        <form class="card" data-conv="m2ft">
+          <h3>Meters to Feet</h3>
+          <label>Meters (m)
+            <input type="number" step="any" placeholder="e.g. 10" required>
+          </label>
+          <button type="submit">Convert</button>
+          <p class="result" aria-live="polite"></p>
+        </form>
+
+        <form class="card" data-conv="ft2m">
+          <h3>Feet to Meters</h3>
+          <label>Feet (ft)
+            <input type="number" step="any" placeholder="e.g. 30" required>
+          </label>
+          <button type="submit">Convert</button>
+          <p class="result" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ASSIGNMENT 2: INCOME TAX CALCULATOR -->
+    <section id="tax" class="panel">
+      <h2>Assignment #2 &ndash; Income Tax Calculator</h2>
+      <p class="hint">Enter the net taxable income. Income Tax = Basic Tax + Rate.</p>
+
+      <form id="taxForm" class="card">
+        <label>Net Taxable Income (&#8369;)
+          <input id="taxIncome" type="number" step="any" min="0" placeholder="e.g. 520000" required>
+        </label>
+        <button type="submit">Compute Income Tax</button>
+        <div id="taxResult" class="result" aria-live="polite"></div>
+      </form>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Tax table</caption>
+          <thead>
+            <tr>
+              <th>Over</th>
+              <th>But Not Over</th>
+              <th>Basic Tax + Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>&ndash;</td><td>&#8369;250,000</td><td>0%</td></tr>
+            <tr><td>&#8369;250,000</td><td>&#8369;400,000</td><td>20% of the excess over &#8369;250,000</td></tr>
+            <tr><td>&#8369;400,000</td><td>&#8369;800,000</td><td>&#8369;30,000 + 25% of the excess over &#8369;400,000</td></tr>
+            <tr><td>&#8369;800,000</td><td>&#8369;2,000,000</td><td>&#8369;130,000 + 30% of the excess over &#8369;800,000</td></tr>
+            <tr><td>&#8369;2,000,000</td><td>&#8369;8,000,000</td><td>&#8369;490,000 + 32% of the excess over &#8369;2,000,000</td></tr>
+            <tr><td>&#8369;8,000,000</td><td>&ndash;</td><td>&#8369;2,410,000 + 35% of the excess over &#8369;8,000,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ASSIGNMENT 3: LOOPING -->
+    <section id="looping" class="panel">
+      <h2>Assignment #3 &ndash; Looping</h2>
+      <p class="hint">Each calculation uses a different kind of loop.</p>
+
+      <div class="grid grid-3">
+        <form class="card" data-loop="factorial">
+          <h3>The nth Factorial</h3>
+          <span class="tag">while loop</span>
+          <label>Enter n (0 to 170)
+            <input type="number" step="1" min="0" max="170" placeholder="e.g. 5" required>
+          </label>
+          <button type="submit">Compute</button>
+          <p class="result" aria-live="polite"></p>
+        </form>
+
+        <form class="card" data-loop="sum">
+          <h3>Sum of the First n Numbers</h3>
+          <span class="tag">do&hellip;while loop</span>
+          <label>Enter n (1 or more)
+            <input type="number" step="1" min="1" placeholder="e.g. 10" required>
+          </label>
+          <button type="submit">Compute</button>
+          <p class="result" aria-live="polite"></p>
+        </form>
+
+        <form class="card" data-loop="average">
+          <h3>Average of the First n Numbers</h3>
+          <span class="tag">for loop</span>
+          <label>Enter n (1 or more)
+            <input type="number" step="1" min="1" placeholder="e.g. 10" required>
+          </label>
+          <button type="submit">Compute</button>
+          <p class="result" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ASSIGNMENT 4: PAYROLL -->
+    <section id="payroll" class="panel">
+      <h2>Assignment #4 &ndash; Payroll</h2>
+      <p class="hint">Add or delete employees in the payroll list.</p>
+
+      <form id="payrollForm" class="card">
+        <h3>Add Employee</h3>
+        <div class="grid grid-4">
+          <label>Employee Name
+            <input id="empName" type="text" placeholder="e.g. Juan Dela Cruz" required>
+          </label>
+          <label>Days Worked
+            <input id="daysWorked" type="number" step="any" min="0" placeholder="e.g. 15" required>
+          </label>
+          <label>Daily Rate (&#8369;)
+            <input id="dailyRate" type="number" step="any" min="0" placeholder="e.g. 600" required>
+          </label>
+          <label>Deduction Amount (&#8369;)
+            <input id="deduction" type="number" step="any" min="0" placeholder="e.g. 500" required>
+          </label>
+        </div>
+        <button type="submit">Add Employee</button>
+        <p id="addMessage" class="result" aria-live="polite"></p>
+      </form>
+
+      <div class="table-wrap">
+        <table id="payrollTable">
+          <caption>Payroll list</caption>
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Employee Name</th>
+              <th>Days Worked</th>
+              <th>Daily Rate</th>
+              <th>Gross Pay</th>
+              <th>Deduction Amount</th>
+              <th>Net Pay</th>
+            </tr>
+          </thead>
+          <tbody id="payrollBody"></tbody>
+        </table>
+      </div>
+
+      <form id="deleteForm" class="card delete-card">
+        <h3>Delete Employee</h3>
+        <label>Line Number to delete
+          <input id="deleteLine" type="number" step="1" min="1" placeholder="e.g. 1" required>
+        </label>
+        <button type="submit" class="danger">Delete</button>
+        <p id="deleteMessage" class="result" aria-live="polite"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>CS 1130 &middot; Web Page Project &middot; Your Name Here</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
